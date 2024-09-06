@@ -1,0 +1,21 @@
+name: 🚀 Deploy website on push
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 137.59.110.150
+          username: oks@9.inspiren.dev
+          password: ${{ secrets.FTPPASSWORD }}
+          protocol: ftps
+          server-dir: 'public_html/mt-gear/wp-content/themes/blocksy-child/'
