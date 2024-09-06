@@ -1,0 +1,263 @@
+$primary-font-family-name: 'Montserrat';
+$primary-font-family-file-name: 'Montserrat';
+$primary-font-family-format-extension: 'ttf';
+$primary-font-family: (
+  Thin: 100,
+  ExtraLight: 200,
+  Light: 300,
+  Regular: 400,
+  Medium: 500,
+  SemiBold: 600,
+  Bold: 700,
+  ExtraBold: 800,
+  Black: 900,
+);
+
+@each $key, $val in $primary-font-family {
+  @font-face {
+    font-family: $primary-font-family-name;
+    @if ($primary-font-family-format-extension == 'ttf') {
+      src: url('./fonts/#{$primary-font-family-file-name}-#{$key}.#{$primary-font-family-format-extension}')
+        format('truetype');
+    } @else if($font-family-format-extension == 'otf') {
+      src: url('./fonts/#{$primary-font-family-file-name}-#{$key}.#{$primary-font-family-format-extension}')
+        format('opentype');
+    }
+    font-weight: #{$val};
+    font-display: swap;
+  }
+}
+
+// $secondary-font-family-name: 'Poppins';
+// $secondary-font-family-file-name: 'Poppins';
+// $secondary-font-family-format-extension: 'ttf';
+// $secondary-font-family: (
+//   Thin: 100,
+//   ExtraLight: 200,
+//   Light: 300,
+//   Regular: 400,
+//   Medium: 500,
+//   SemiBold: 600,
+//   Bold: 700,
+//   ExtraBold: 800,
+//   Black: 900,
+// );
+
+// @each $key, $val in $secondary-font-family {
+//   @font-face {
+//     font-family: $secondary-font-family-name;
+//     @if ($secondary-font-family-format-extension == 'ttf') {
+//       src: url('./fonts/#{$secondary-font-family-file-name}-#{$key}.#{$secondary-font-family-format-extension}')
+//         format('truetype');
+//     } @else if($font-family-format-extension == 'otf') {
+//       src: url('./fonts/#{$secondary-font-family-file-name}-#{$key}.#{$secondary-font-family-format-extension}')
+//         format('opentype');
+//     }
+//     font-weight: #{$val};
+//     font-display: swap;
+//   }
+// }
+
+:root {
+  --theme-font-family: '#{$primary-font-family-name}', sans-serif;
+  // --font-secondary: #{$secondary-font-family-name}, sans-serif;
+}
+
+.custom-button {
+  &.custom-primary-button {
+    .vc_general.vc_btn3 {
+      &:hover {
+        background-color: var(--theme-palette-color-1) !important;
+        color: white !important;
+      }
+    }
+  }
+
+  &.custom-yellow-button {
+    .vc_general.vc_btn3 {
+      border-color: #ff9900;
+
+      &:hover {
+        background-color: transparent !important;
+        color: #ff9900 !important;
+      }
+    }
+  }
+
+  &.custom-white-button {
+    .vc_general.vc_btn3 {
+      border-color: white;
+
+      &:hover {
+        background-color: white !important;
+        color: var(--theme-palette-color-1) !important;
+      }
+    }
+  }
+}
+
+.home-banner-row {
+  & > .wpb_column > .vc_column-inner > .wpb_wrapper {
+    @media screen and (min-width: 1200px) {
+      margin-bottom: -50px;
+    }
+  }
+}
+
+.home-pro-sec {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 213 / 319;
+    z-index: -1;
+    display: block !important;
+    background: center / contain no-repeat url(./images/gear-icon.png);
+
+    @media screen and (min-width: 1200px) {
+      top: 100px;
+    }
+  }
+
+  .home-pro-row {
+    & > .wpb_column {
+      overflow: hidden;
+
+      .pro-image,
+      .vc_custom_heading {
+        transition: var(--all-transition);
+      }
+
+      &:not(:hover) {
+        @media screen and (min-width: 1200px) {
+          .vc_custom_heading {
+            color: #313131 !important;
+          }
+          .pro-image {
+            transform: translateY(100%);
+          }
+        }
+      }
+    }
+
+    .home-pro-inner-row {
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      width: calc(100% - 30px);
+
+      .vc_custom_heading {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.home-type-row {
+  .type-image {
+    a {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+
+      &::after {
+        content: 'READ MORE';
+        position: absolute;
+        inset: 0;
+        background-color: rgb(0 0 0 / 0.3);
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        color: white;
+        transition: var(--all-transition);
+      }
+
+      &:not(:hover) {
+        &::after {
+          transform: translateY(100%);
+        }
+      }
+    }
+  }
+}
+
+.home-flair-sec {
+  position: relative;
+  isolation: isolate;
+
+  .home-flair-row {
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 50%;
+      transform: translateY(-50%);
+
+      .flair-image {
+        img {
+          max-height: 385px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+.home-contact-row {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    display: block !important;
+    background-color: rgb(0 0 0 / 0.3);
+  }
+
+  .stroke-title {
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-stroke-width: 0.02em;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  .home-contact-inner-row {
+    display: flex;
+
+    @media screen and (min-width: 768px) and (max-width: 991.98px) {
+      flex-direction: column-reverse;
+    }
+
+    & > .wpb_column {
+      @media screen and (min-width: 768px) {
+        width: auto;
+      }
+    }
+  }
+}
+
+#footer {
+  [data-row='middle'] {
+    #media_image-2 {
+      img {
+        width: 100px;
+      }
+    }
+
+    & > div {
+      @media screen and (max-width: 999.98px) {
+        grid-template-columns: none;
+      }
+    }
+  }
+}
