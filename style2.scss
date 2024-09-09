@@ -194,6 +194,25 @@ $primary-font-family: (
   isolation: isolate;
 
   .home-flair-row {
+    .flair-image {
+      position: relative;
+      isolation: isolate;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 65%;
+        left: 0;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 991 / 402;
+        z-index: -1;
+        display: block !important;
+        background: center / contain no-repeat url(./images/flair-03-Photoroom.webp);
+        -webkit-mask: center / cover no-repeat linear-gradient(to top, transparent, rgb(0 0 0));
+      }
+    }
+
     @media screen and (min-width: 768px) {
       position: absolute;
       top: 50%;
