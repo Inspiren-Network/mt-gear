@@ -41,7 +41,7 @@ do_action('blocksy:footer:after');
 <div id="side-contact" class="float-btn">
 	<a href="https://wa.me/60333624846" id="whatsapp-float" class="floating-button floating-button_whatsapp" target="_blank"><i id="whatsapp-float" class="fa-brands fa-whatsapp"></i></a>
 	<a href="tel:60333624846" id="tel-float" class="floating-button floating-button_phone" target="_blank"><i id="tel-float" class="fa-solid fa-phone"></i></a>
-	<a href="mailto:mtgearengsb@gmail.com" id="email-float" class="floating-button floating-button_mail	popmake-701" target="_blank"><i id="email-float" class="fa-solid fa-envelope"></i></a>
+	<a href="mailto:mtgearengsb@gmail.com" id="email-float" class="floating-button floating-button_mail popmake-271" target="_blank"><i id="email-float" class="fa-solid fa-envelope"></i></a>
 	<button class="floating-button float-btn-trigger"><i id="open-float" class="fa-solid fa-comment"></i><i id="close-float" class="fa-solid fa-xmark"></i></button>
 </div>
 
