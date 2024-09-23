@@ -11,6 +11,24 @@ jQuery(document).ready(function ($) {
 
   $('#side-contact .float-btn-trigger').click()
 
+  if ($('.contact-us-button').length) {
+    const productUrl = window.location.href
+    const product = $('.woocommerce .summary .product_title').text()
+    const whatsappMessage = "I'm interested in " + product + ' (' + productUrl + ') '
+    const encodedMessage = encodeURIComponent(whatsappMessage)
+    const whatsappLink = 'https://wa.me/60333624846?text=' + encodedMessage
+
+    $('.contact-us-button').attr('href', whatsappLink)
+  }
+
+  if ($('.ct-sidebar .widget-title').length) {
+    $('.ct-sidebar .widget-title').each(function () {
+      $(this).click(function () {
+        $(this).toggleClass('active')
+      })
+    })
+  }
+
   if ($('.custom-col-fade-up').length) {
     if ($(window).width() > 767) {
       $('.custom-col-fade-up').each(function () {

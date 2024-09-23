@@ -320,9 +320,6 @@ ul[role='menubar'] li[class*='current'] > a svg,
   font-size: 25px;
 }
 
-.woocommerce div.product div.woocommerce-tabs ul.tabs {
-  display: none !important;
-}
 .woocommerce div.product div.woocommerce-tabs div.woocommerce-Tabs-panel.panel {
   padding-top: 0;
 }
@@ -540,6 +537,18 @@ ul[role='menubar'] li[class*='current'] > a svg,
 @for $i from 0 through 200 {
   .z-#{$i} {
     z-index: #{$i} !important;
+  }
+}
+
+@for $i from 0 through 200 {
+  .w-#{$i} {
+    width: #{$i}px !important;
+  }
+}
+
+@for $i from 0 through 200 {
+  .h-#{$i} {
+    height: #{$i}px !important;
   }
 }
 
@@ -863,14 +872,6 @@ img[data-dominant-color]:not(.has-transparency) {
 @media screen and (min-width: 768px) {
   :root {
     --gap: 100px;
-  }
-
-  .contact-form .form {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .contact-form .form #email ~ * {
-    grid-column: 1 / -1;
   }
 
   .single-product article > .related > h2,
