@@ -255,6 +255,23 @@ $primary-font-family: (
   }
 }
 
+.home-flairproducts-row {
+  .flairproducts-image {
+    @media screen and (max-width: 767.98px) {
+      border: 1px solid #313131;
+      padding: 20px;
+    }
+  }
+
+  .vc_row.vc_inner {
+    .vc_custom_heading {
+      @media screen and (max-width: 767.98px) {
+        min-height: 48px;
+      }
+    }
+  }
+}
+
 .home-contact-row {
   position: relative;
   isolation: isolate;
@@ -433,6 +450,12 @@ body.single-product {
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
+  }
+
+  .flexy-pills {
+    .ct-media-container {
+      border: 1px solid rgba(49, 49, 49, 0.5);
+    }
   }
 }
 
